@@ -66,7 +66,7 @@ donut.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=1
 
 with open('genres.json') as json_file: 
     genres = json.load(json_file)
-genre_df = pd.DataFrame({"Genre":list(genres.keys()), "Quantity":list(genres.values())})
+genre_df = pd.DataFrame({"Genre":list(genres.keys()), "Quantity":list(genres.values())}).sort_values('Quantity')
 
 genre = px.bar(genre_df,x="Quantity", y="Genre", orientation='h', title='Top genres for TV Shows and Movies', color_discrete_sequence=[style['color']])
 
