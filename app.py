@@ -32,7 +32,7 @@ df_2019 = df[df['dateStr']<'2020-01-01']
 hours_2020 = df_2020.duration.sum()/3600
 days_2020 = str(round(hours_2020/24, 2))
 
-df_2020['weekDay'] = df_2020['dateStr'].apply(lambda x: x.weekday_name)
+df_2020['weekDay'] = df_2020['dateStr'].dt.day_name()
 df_2020['weekDayCount'] = df_2020['dateStr'].apply(lambda x: x.weekday())
 df_2020['durationM'] = df_2020['duration'].apply(lambda x: x/60)
 df_2020['durationH'] = df_2020['duration'].apply(lambda x: x/3600)
