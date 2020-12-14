@@ -25,7 +25,7 @@ style = {
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
-df = pd.read_csv('viewedHistory.csv', sep=';', error_bad_lines=False, engine='python')
+df = pd.read_csv('data/viewedHistory_George.csv', sep=';', error_bad_lines=False, engine='python')
 df['dateStr'] = pd.to_datetime(df['dateStr'], utc=True)
 df_2020 = df[df['dateStr']>'2019-12-31']
 df_2019 = df[df['dateStr']<'2020-01-01']
